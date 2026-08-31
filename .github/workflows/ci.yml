@@ -19,3 +19,6 @@ jobs:
       
       - name: Build client test image
         run: docker build -t react-test -f ./client/Dockerfile.dev ./client
+
+      - name: Run client tests
+        run: docker run react-test npm test -- --coverage
