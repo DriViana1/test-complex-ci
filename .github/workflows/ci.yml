@@ -16,3 +16,6 @@ jobs:
 
       - name: Docker version
         run: docker --version
+      
+      - name: Build client test image
+        run: docker build -t react-test -f ./client/Dockerfile.dev ./client
