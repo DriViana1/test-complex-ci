@@ -29,9 +29,9 @@ jobs:
       - name: Build nginx image
         run: docker build -t multi-nginx ./nginx
 
-      - name: Build server image
-        run: docker build -t multi-server ./server
+      - name: Build server
+        run: docker build -t multi-server -f ./server/Dockerfile.dev ./server
 
-      - name: Build worker image
-        run: docker build -t multi-worker ./worker
+      - name: Build worker
+        run: docker build -t multi-worker -f ./worker/Dockerfile.dev ./worker
         #teste
