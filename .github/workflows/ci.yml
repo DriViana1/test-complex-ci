@@ -22,3 +22,16 @@ jobs:
 
       - name: Run client tests
         run: docker run react-test npm test -- --coverage
+
+      - name: Build client image
+        run: docker build -t multi-client ./client
+
+      - name: Build nginx image
+        run: docker build -t multi-nginx ./nginx
+
+      - name: Build server image
+        run: docker build -t multi-server ./server
+
+      - name: Build worker image
+        run: docker build -t multi-worker ./worker
+        #teste
