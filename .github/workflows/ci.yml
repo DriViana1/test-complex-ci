@@ -21,7 +21,7 @@ jobs:
         run: docker build -t react-test -f ./client/Dockerfile.dev ./client
 
       - name: Run client tests
-        run: docker run react-test npm test -- --coverage
+        run: docker run react-test npm test -- --coverage --watchAll=false
 
       - name: Build client image
         run: docker build -t multi-client ./client
