@@ -73,3 +73,12 @@ jobs:
       - name: Upload Dockerrun to S3
         run: |
           aws s3 cp Dockerrun.aws.json s3://complex-beanstalk-0c29dc86b1f767fc9edcfd343a/Dockerrun-${IMAGE_TAG}.aws.json
+
+      - name: Create Elastic Beanstalk application version
+        run: |
+          aws elasticbeanstalk create-application-version \
+            --application-name complex \
+            --version-label "complex-${IMAGE_TAG}" \
+            --source-bundle S3Bucket="complex-beanstalk-0c29dc86b1f767fc9edcfd343a",S3Key="Dockerrun-${IMAGE_TAG}.aws.json"
+
+      
