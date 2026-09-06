@@ -19,7 +19,7 @@ jobs:
 
       - name: Update Dockerrun image tags
         run: |
-          sed -i 's/:v2/:${IMAGE_TAG}/g' Dockerrun.aws.json
+          sed -i "s/:v2/:${IMAGE_TAG}/g" Dockerrun.aws.json
 
       - name: Docker version
         run: docker --version
