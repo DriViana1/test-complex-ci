@@ -86,3 +86,6 @@ jobs:
           aws elasticbeanstalk update-environment \
             --environment-name complex-env \
             --version-label "complex-${IMAGE_TAG}"
+
+          aws elasticbeanstalk wait environment-updated \
+            --environment-name complex-env
