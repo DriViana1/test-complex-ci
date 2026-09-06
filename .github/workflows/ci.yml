@@ -18,8 +18,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: OIDC Debugger
-        uses: github/actions-oidc-debugger@main
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::330905068651:role/git-role-aws
+          aws-region: us-east-1
       
       - name: Set image tag 
         run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
