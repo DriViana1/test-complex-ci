@@ -17,6 +17,10 @@ jobs:
       - name: Set image tag 
         run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
+      - name: Update Dockerrun image tags
+        run: |
+          sed -i 's/:v2/:${IMAGE_TAG}/g' Dockerrun.aws.json
+
       - name: Docker version
         run: docker --version
       
@@ -33,26 +37,26 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           
       - name: Build client image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-client ./client
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-client:${IMAGE_TAG} ./client
 
       - name: Build nginx image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-nginx ./nginx
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-nginx:${IMAGE_TAG} ./nginx
 
       - name: Build server
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-server -f ./server/Dockerfile.dev ./server
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-server:${IMAGE_TAG} -f ./server/Dockerfile.dev ./server
 
       - name: Build worker
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker -f ./worker/Dockerfile.dev ./worker
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker:${IMAGE_TAG} -f ./worker/Dockerfile.dev ./worker
       
       
       - name: Push client
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-client
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-client:${IMAGE_TAG}  
 
       - name: Push nginx
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-nginx
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-nginx:${IMAGE_TAG}
 
       - name: Push server
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-server
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-server:${IMAGE_TAG}
 
       - name: Push worker
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker:${IMAGE_TAG}
