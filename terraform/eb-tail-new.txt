@@ -1,0 +1,472 @@
+----------------------------------------
+/var/log/docker-events.log
+----------------------------------------
+2026-09-04T01:09:35.698707254Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=c5aa1dfaa28d6aaf79882da9a82662552399361f4fae86e7f98532c1a38d5c1d, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:09:35.700404699Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=c5aa1dfaa28d6aaf79882da9a82662552399361f4fae86e7f98532c1a38d5c1d, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:09:35.976296427Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=c5aa1dfaa28d6aaf79882da9a82662552399361f4fae86e7f98532c1a38d5c1d, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:09:35.978162716Z container health_status: healthy 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:09:39.530215347Z image pull adrianasviana/multi-worker@sha256:3753b0b25329ceae3b02265566f5f3c62b35da1b87475607ff2a1e1d8a935569 (name=adrianasviana/multi-worker)
+2026-09-04T01:09:39.581103694Z image tag sha256:9d755e403261335a1e37d24c321ee2c7d1982e75c8605de8d15c0176b47e7bbc (name=adrianasviana/multi-worker:latest)
+2026-09-04T01:09:39.860533163Z container create da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-98cafcd39ee196fc8d01)
+2026-09-04T01:09:39.984014198Z network connect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f, name=bridge, type=bridge)
+2026-09-04T01:09:40.081239313Z image pull adrianasviana/multi-nginx@sha256:994242c363ebb0ac1498c094be60969e1dc83aa58e8634fb2ab0545bd5836f02 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=adrianasviana/multi-nginx)
+2026-09-04T01:09:40.091593018Z image tag sha256:915074b05bed13d5f3b9b949d48a399a10f46fa537dd0c37ca0268b63c4b9ef0 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=adrianasviana/multi-nginx:latest)
+2026-09-04T01:09:40.212893794Z container create d231a457d47046932541366bd6baa8f3041a37b1bb8b1b7b5de5b8a0154a777e (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=nginx, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-nginx, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=ecs-awseb-complex-env-hepqamgwnc-1-nginx-9680ffc18ad3a2bc7600)
+2026-09-04T01:09:40.423085526Z network connect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=d231a457d47046932541366bd6baa8f3041a37b1bb8b1b7b5de5b8a0154a777e, name=bridge, type=bridge)
+2026-09-04T01:09:40.428072142Z image pull adrianasviana/multi-server@sha256:7e1634042cf825c436a05b0328a7de96c82efed86fdddd6dab88a9558b36605a (name=adrianasviana/multi-server)
+2026-09-04T01:09:40.439404475Z image tag sha256:e238f708d984b7e95fff2757d310da36960198342ee5880e893bf0891bd243d9 (name=adrianasviana/multi-server:latest)
+2026-09-04T01:09:40.522444456Z container create 77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-de8ddac384b7a4a8d901)
+2026-09-04T01:09:40.603629328Z network connect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69, name=bridge, type=bridge)
+2026-09-04T01:09:40.752538539Z container start da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-98cafcd39ee196fc8d01)
+2026-09-04T01:09:40.873387915Z container start d231a457d47046932541366bd6baa8f3041a37b1bb8b1b7b5de5b8a0154a777e (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=nginx, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-nginx, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=ecs-awseb-complex-env-hepqamgwnc-1-nginx-9680ffc18ad3a2bc7600)
+2026-09-04T01:09:41.142400687Z container start 77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-de8ddac384b7a4a8d901)
+2026-09-04T01:09:41.403717929Z network disconnect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=d231a457d47046932541366bd6baa8f3041a37b1bb8b1b7b5de5b8a0154a777e, name=bridge, type=bridge)
+2026-09-04T01:09:41.414980860Z container die d231a457d47046932541366bd6baa8f3041a37b1bb8b1b7b5de5b8a0154a777e (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=nginx, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, execDuration=0, exitCode=1, image=adrianasviana/multi-nginx, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=ecs-awseb-complex-env-hepqamgwnc-1-nginx-9680ffc18ad3a2bc7600)
+2026-09-04T01:09:41.460939948Z container kill 77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-de8ddac384b7a4a8d901, signal=15)
+2026-09-04T01:09:41.465589422Z container kill da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-98cafcd39ee196fc8d01, signal=15)
+2026-09-04T01:10:05.979596632Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=fd8c7937c8e0b3ab60cbad8b72846b89f0eeb6c4fc10dd910d756654bd57be6c, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:10:05.979669743Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=fd8c7937c8e0b3ab60cbad8b72846b89f0eeb6c4fc10dd910d756654bd57be6c, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:10:06.169245985Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=fd8c7937c8e0b3ab60cbad8b72846b89f0eeb6c4fc10dd910d756654bd57be6c, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:10:11.487919702Z container kill 77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-de8ddac384b7a4a8d901, signal=9)
+2026-09-04T01:10:11.501809742Z container kill da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-98cafcd39ee196fc8d01, signal=9)
+2026-09-04T01:10:11.995566804Z network disconnect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69, name=bridge, type=bridge)
+2026-09-04T01:10:12.005581361Z container stop 77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-de8ddac384b7a4a8d901)
+2026-09-04T01:10:12.010599525Z container die 77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, execDuration=30, exitCode=137, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-de8ddac384b7a4a8d901)
+2026-09-04T01:10:12.083437460Z network disconnect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f, name=bridge, type=bridge)
+2026-09-04T01:10:12.092056417Z container stop da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-98cafcd39ee196fc8d01)
+2026-09-04T01:10:12.097011323Z container die da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, execDuration=30, exitCode=137, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-98cafcd39ee196fc8d01)
+2026-09-04T01:10:24.419080869Z image pull adrianasviana/multi-nginx@sha256:994242c363ebb0ac1498c094be60969e1dc83aa58e8634fb2ab0545bd5836f02 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=adrianasviana/multi-nginx)
+2026-09-04T01:10:24.428354241Z image tag sha256:915074b05bed13d5f3b9b949d48a399a10f46fa537dd0c37ca0268b63c4b9ef0 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=adrianasviana/multi-nginx:latest)
+2026-09-04T01:10:24.428363605Z image pull adrianasviana/multi-worker@sha256:3753b0b25329ceae3b02265566f5f3c62b35da1b87475607ff2a1e1d8a935569 (name=adrianasviana/multi-worker)
+2026-09-04T01:10:24.435235406Z image tag sha256:9d755e403261335a1e37d24c321ee2c7d1982e75c8605de8d15c0176b47e7bbc (name=adrianasviana/multi-worker:latest)
+2026-09-04T01:10:24.448379473Z image pull adrianasviana/multi-server@sha256:7e1634042cf825c436a05b0328a7de96c82efed86fdddd6dab88a9558b36605a (name=adrianasviana/multi-server)
+2026-09-04T01:10:24.454479898Z image tag sha256:e238f708d984b7e95fff2757d310da36960198342ee5880e893bf0891bd243d9 (name=adrianasviana/multi-server:latest)
+2026-09-04T01:10:24.498072965Z container create 46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=nginx, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-nginx, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=ecs-awseb-complex-env-hepqamgwnc-1-nginx-96dcc79ccef19cd58001)
+2026-09-04T01:10:24.506962872Z container create 5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-d6d9a7ab8092c4f8c201)
+2026-09-04T01:10:24.520391365Z container create 7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-facda5f8ece19b8d3400)
+2026-09-04T01:10:24.636294329Z network connect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3, name=bridge, type=bridge)
+2026-09-04T01:10:24.741946983Z network connect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751, name=bridge, type=bridge)
+2026-09-04T01:10:24.749560730Z network connect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501, name=bridge, type=bridge)
+2026-09-04T01:10:25.033589321Z container start 5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-d6d9a7ab8092c4f8c201)
+2026-09-04T01:10:25.191262870Z container start 7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-facda5f8ece19b8d3400)
+2026-09-04T01:10:25.293403739Z container start 46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=nginx, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-nginx, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=ecs-awseb-complex-env-hepqamgwnc-1-nginx-96dcc79ccef19cd58001)
+2026-09-04T01:10:25.944345612Z network disconnect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751, name=bridge, type=bridge)
+2026-09-04T01:10:25.956850559Z container die 46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=nginx, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, execDuration=0, exitCode=1, image=adrianasviana/multi-nginx, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=ecs-awseb-complex-env-hepqamgwnc-1-nginx-96dcc79ccef19cd58001)
+2026-09-04T01:10:26.001424131Z container kill 5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-d6d9a7ab8092c4f8c201, signal=15)
+2026-09-04T01:10:26.013982185Z container kill 7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-facda5f8ece19b8d3400, signal=15)
+2026-09-04T01:10:36.171609855Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=321b7c71b0c484e7a7154245a9192c67d181264bf22cb9041072efdc138f729b, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:10:36.171728012Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=321b7c71b0c484e7a7154245a9192c67d181264bf22cb9041072efdc138f729b, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:10:36.328667851Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=321b7c71b0c484e7a7154245a9192c67d181264bf22cb9041072efdc138f729b, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:10:56.026822092Z container kill 5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-d6d9a7ab8092c4f8c201, signal=9)
+2026-09-04T01:10:56.037592797Z container kill 7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-facda5f8ece19b8d3400, signal=9)
+2026-09-04T01:10:56.524889701Z network disconnect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3, name=bridge, type=bridge)
+2026-09-04T01:10:56.534845659Z container stop 5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-d6d9a7ab8092c4f8c201)
+2026-09-04T01:10:56.539747696Z container die 5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=worker, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, execDuration=31, exitCode=137, image=adrianasviana/multi-worker, name=ecs-awseb-complex-env-hepqamgwnc-1-worker-d6d9a7ab8092c4f8c201)
+2026-09-04T01:10:56.593209077Z network disconnect 5a33c9a86fa77df9b2a577f25aa2de59c607de1a6c4158c285dafe0adf6ad571 (container=7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501, name=bridge, type=bridge)
+2026-09-04T01:10:56.603268095Z container stop 7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-facda5f8ece19b8d3400)
+2026-09-04T01:10:56.608349821Z container die 7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 (com.amazonaws.ecs.cluster=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.container-name=server, com.amazonaws.ecs.task-arn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396, com.amazonaws.ecs.task-definition-family=awseb-complex-env-hepqamgwnc, com.amazonaws.ecs.task-definition-version=1, execDuration=31, exitCode=137, image=adrianasviana/multi-server, name=ecs-awseb-complex-env-hepqamgwnc-1-server-facda5f8ece19b8d3400)
+2026-09-04T01:11:06.329735428Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=268964f0fb98457408ae14adaaa411a470b3622f0e5ecdca3bd3a0a2d0cd6492, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:11:06.329799458Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=268964f0fb98457408ae14adaaa411a470b3622f0e5ecdca3bd3a0a2d0cd6492, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:11:06.432094795Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=268964f0fb98457408ae14adaaa411a470b3622f0e5ecdca3bd3a0a2d0cd6492, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:11:36.434043288Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=ee841c5d00773dbe392a4d1d18211471132aad3f4d36ce436d68c96b54a89502, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:11:36.434103288Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=ee841c5d00773dbe392a4d1d18211471132aad3f4d36ce436d68c96b54a89502, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:11:36.554741773Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=ee841c5d00773dbe392a4d1d18211471132aad3f4d36ce436d68c96b54a89502, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:12:06.556218041Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=f4244d27cd8b363c113bdbf1907f20ef0ddf3ca623ccc4d3ff4810cb7e55e1f5, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:12:06.556281116Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=f4244d27cd8b363c113bdbf1907f20ef0ddf3ca623ccc4d3ff4810cb7e55e1f5, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:12:06.671473507Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=f4244d27cd8b363c113bdbf1907f20ef0ddf3ca623ccc4d3ff4810cb7e55e1f5, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:12:36.673025056Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=faecadbbc267761338e5f5d9a6f5f52ab6bd5d786a1fe1f5893e4eed654f972e, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:12:36.673076967Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=faecadbbc267761338e5f5d9a6f5f52ab6bd5d786a1fe1f5893e4eed654f972e, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:12:36.784811690Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=faecadbbc267761338e5f5d9a6f5f52ab6bd5d786a1fe1f5893e4eed654f972e, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:13:06.785909603Z container exec_create: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=581248008ad32a3c95f6181f52990d03282a207bbbf92e48d5b29de705201bac, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:13:06.785952651Z container exec_start: /agent --healthcheck 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=581248008ad32a3c95f6181f52990d03282a207bbbf92e48d5b29de705201bac, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+2026-09-04T01:13:06.880069131Z container exec_die 437991da2b01c5982c6e286478e75266829b074a54f75ab09b558cb6c32ae2ec (execID=581248008ad32a3c95f6181f52990d03282a207bbbf92e48d5b29de705201bac, exitCode=0, image=amazon/amazon-ecs-agent:latest, name=ecs-agent)
+
+
+----------------------------------------
+/var/log/docker.log
+----------------------------------------
+Sep  4 01:09:01 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:01.742374167Z" level=info msg="Starting up"
+Sep  4 01:09:02 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:02.042891738Z" level=info msg="Loading containers: start."
+Sep  4 01:09:02 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:02.688882979Z" level=info msg="Loading containers: done."
+Sep  4 01:09:02 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:02.709307039Z" level=info msg="Docker daemon" commit=6fdf0a6 containerd-snapshotter=false storage-driver=overlay2 version=25.0.16
+Sep  4 01:09:02 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:02.709495449Z" level=info msg="Daemon has completed initialization"
+Sep  4 01:09:02 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:02.776921389Z" level=info msg="API listen on /run/docker.sock"
+Sep  4 01:09:08 ip-10-0-1-39 docker[1918]: 2026/09/04 01:09:08 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Sep  4 01:09:33 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:33.167645566Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=c681804da14c8905 traceID=2c37fdefec1639c62a83781c31f67a13
+Sep  4 01:09:33 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:33.180814967Z" level=warning msg="reference for unknown type: " digest="sha256:7e1634042cf825c436a05b0328a7de96c82efed86fdddd6dab88a9558b36605a" remote="docker.io/adrianasviana/multi-server@sha256:7e1634042cf825c436a05b0328a7de96c82efed86fdddd6dab88a9558b36605a" spanID=aee7fd21df63586c traceID=ddfb8fbebd5475c76934de4695d68319
+Sep  4 01:09:33 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:33.192958683Z" level=warning msg="reference for unknown type: " digest="sha256:994242c363ebb0ac1498c094be60969e1dc83aa58e8634fb2ab0545bd5836f02" remote="docker.io/adrianasviana/multi-nginx@sha256:994242c363ebb0ac1498c094be60969e1dc83aa58e8634fb2ab0545bd5836f02" spanID=b19366a30daa0311 traceID=cfde7ce1d0bea16b26a8c52d4f44e231
+Sep  4 01:09:33 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:33.281097365Z" level=warning msg="reference for unknown type: " digest="sha256:3753b0b25329ceae3b02265566f5f3c62b35da1b87475607ff2a1e1d8a935569" remote="docker.io/adrianasviana/multi-worker@sha256:3753b0b25329ceae3b02265566f5f3c62b35da1b87475607ff2a1e1d8a935569" spanID=2036e6c6afcd1d22 traceID=e8fb3f5afae1bda46c65789af67368e4
+Sep  4 01:09:33 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:33.303883069Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:09:34 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:34.430874443Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=fd526c20dc821693 traceID=19159a88714c6353c4028f51c2c7779e
+Sep  4 01:09:34 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:34.568912785Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:09:35 ip-10-0-1-39 docker[1918]: 2026/09/04 01:09:35 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Sep  4 01:09:37 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:37.107089786Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=178ac898d4a274ab traceID=1d2324c687b578e1f7f2f026fe182242
+Sep  4 01:09:37 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:37.242212810Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:09:40 ip-10-0-1-39 docker[1918]: 2026/09/04 01:09:40 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Sep  4 01:09:41 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:41.070546412Z" level=info msg="ignoring event" container=d231a457d47046932541366bd6baa8f3041a37b1bb8b1b7b5de5b8a0154a777e module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep  4 01:09:41 ip-10-0-1-39 docker[1918]: 2026/09/04 01:09:41 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Sep  4 01:09:42 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:42.015125321Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=a073990cfaa8449d traceID=38c55934673065083cf2dce62a549fe9
+Sep  4 01:09:42 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:42.139164291Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:09:47 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:47.383680116Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=712b4b53c11a00d0 traceID=0c025964e0c3daf36ae05b4e1c85aca4
+Sep  4 01:09:47 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:09:47.502143094Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:10:11 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:11.462643893Z" level=info msg="Container failed to exit within 30s of signal 15 - using the force" container=77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69
+Sep  4 01:10:11 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:11.465715989Z" level=info msg="Container failed to exit within 30s of signal 15 - using the force" container=da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f
+Sep  4 01:10:11 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:11.665766108Z" level=info msg="ignoring event" container=da661b2544f393e81197caba89c2d0cd29f8bda0ec4d66884459946d924b6c4f module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep  4 01:10:11 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:11.665821579Z" level=info msg="ignoring event" container=77f9849d92a0ca267d7473b561faecf0d4873560125c05100094c9c1ce89cf69 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep  4 01:10:24 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:24.343362648Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=60ee299e408c1803 traceID=e1ebcb578a718d4450b10905a79eb927
+Sep  4 01:10:24 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:24.471600494Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:10:25 ip-10-0-1-39 docker[1918]: 2026/09/04 01:10:25 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Sep  4 01:10:25 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:25.614015727Z" level=info msg="ignoring event" container=46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep  4 01:10:26 ip-10-0-1-39 docker[1918]: 2026/09/04 01:10:26 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Sep  4 01:10:29 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:29.921634166Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=9a9bb962a5ae5971 traceID=c7b372f2e593786091f70f5f38a8f35a
+Sep  4 01:10:30 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:30.043259222Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:10:35 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:35.944570125Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=69059e960f783ac3 traceID=9d6a4be2f309530e1d86573e85f90768
+Sep  4 01:10:36 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:36.080821487Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:10:41 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:41.730744820Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=f4d0d0db70571b07 traceID=56f7cbfdaa405e4c682fdebfa1311b5e
+Sep  4 01:10:41 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:41.852986879Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:10:47 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:47.441264565Z" level=warning msg="reference for unknown type: " digest="sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" remote="docker.io/adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c" spanID=ce9cd58210f5c2c6 traceID=9274d0d970121c3a118814fcc21e7849
+Sep  4 01:10:47 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:47.552020481Z" level=info msg="Attempting next endpoint for pull after error: no matching manifest for linux/amd64 in the manifest list entries"
+Sep  4 01:10:56 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:56.001675622Z" level=info msg="Container failed to exit within 30s of signal 15 - using the force" container=5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3
+Sep  4 01:10:56 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:56.014696032Z" level=info msg="Container failed to exit within 30s of signal 15 - using the force" container=7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501
+Sep  4 01:10:56 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:56.175922976Z" level=info msg="ignoring event" container=5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep  4 01:10:56 ip-10-0-1-39 docker[1918]: time="2026-09-04T01:10:56.175978258Z" level=info msg="ignoring event" container=7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+See "systemctl status eb-ecs.service" and "journalctl -xeu eb-ecs.service" for details.
++ '[' -f /etc/elasticbeanstalk/.eb-ecs-start-no-retry ']'
++ warn 'Failed to start ECS task, retrying...'
++ echo 'Failed to start ECS task, retrying...'
++ /opt/elasticbeanstalk/bin/event-msg dump -e 'Failed to start ECS task, retrying...' -s 2
++ systemctl reset-failed eb-ecs.service
++ RETRY=1
++ sleep 3
++ '[' 1 -gt 1 ']'
++ systemctl start eb-ecs.service
+Job for eb-ecs.service failed because the control process exited with error code.
+See "systemctl status eb-ecs.service" and "journalctl -xeu eb-ecs.service" for details.
++ '[' -f /etc/elasticbeanstalk/.eb-ecs-start-no-retry ']'
++ warn 'Failed to start ECS task, retrying...'
++ echo 'Failed to start ECS task, retrying...'
++ /opt/elasticbeanstalk/bin/event-msg dump -e 'Failed to start ECS task, retrying...' -s 2
++ systemctl reset-failed eb-ecs.service
++ RETRY=2
++ sleep 3
++ '[' 2 -gt 1 ']'
++ error_exit 'Failed to start ECS task after retrying 2 times.' 1
++ error 'Failed to start ECS task after retrying 2 times.'
++ echo 'Failed to start ECS task after retrying 2 times.'
++ /opt/elasticbeanstalk/bin/event-msg dump -e 'Failed to start ECS task after retrying 2 times.' -s 1
++ exit 1
+
+2026/09/04 01:11:03.513263 [ERROR] An error occurred during execution of command [app-deploy] - [RunAppDeployEnactHooks]. Stop running the command. Error: Command appdeploy/enact/03start_task.sh failed with error exit status 1. Stderr:++ /opt/elasticbeanstalk/bin/get-config platformconfig -k EBHooksDir
++ . /opt/elasticbeanstalk/hooks/common.sh
++++ /opt/elasticbeanstalk/bin/get-config platformconfig -k PlatformConfigDir
+++ PLATFORM_CONFIG_DIR=/opt/elasticbeanstalk/config/platformconfig
+++ PACKAGES_FILE=/opt/elasticbeanstalk/config/platformconfig/packages.json
++++ /opt/elasticbeanstalk/bin/get-config platformconfig -k BakedRegisterFile
+++ BAKED_FILE=/opt/elasticbeanstalk/.aws-eb-baked
++++ /opt/elasticbeanstalk/bin/get-config platformconfig -k AppSourceBundlePath
+++ EB_CONFIG_APP_SOURCE=/opt/elasticbeanstalk/deployment/app_source_bundle
++++ /opt/elasticbeanstalk/bin/get-config platformconfig -k AppDeployDir
+++ EB_CONFIG_APP_CURRENT=/var/app/current
++++ /opt/elasticbeanstalk/bin/get-config platformconfig -k AppStagingDir
+++ EB_CONFIG_APP_STAGING=/var/app/staging
++ RETRY=0
++ systemctl start eb-ecs.service
+Job for eb-ecs.service failed because the control process exited with error code.
+See "systemctl status eb-ecs.service" and "journalctl -xeu eb-ecs.service" for details.
++ '[' -f /etc/elasticbeanstalk/.eb-ecs-start-no-retry ']'
++ warn 'Failed to start ECS task, retrying...'
++ echo 'Failed to start ECS task, retrying...'
++ /opt/elasticbeanstalk/bin/event-msg dump -e 'Failed to start ECS task, retrying...' -s 2
++ systemctl reset-failed eb-ecs.service
++ RETRY=1
++ sleep 3
++ '[' 1 -gt 1 ']'
++ systemctl start eb-ecs.service
+Job for eb-ecs.service failed because the control process exited with error code.
+See "systemctl status eb-ecs.service" and "journalctl -xeu eb-ecs.service" for details.
++ '[' -f /etc/elasticbeanstalk/.eb-ecs-start-no-retry ']'
++ warn 'Failed to start ECS task, retrying...'
++ echo 'Failed to start ECS task, retrying...'
++ /opt/elasticbeanstalk/bin/event-msg dump -e 'Failed to start ECS task, retrying...' -s 2
++ systemctl reset-failed eb-ecs.service
++ RETRY=2
++ sleep 3
++ '[' 2 -gt 1 ']'
++ error_exit 'Failed to start ECS task after retrying 2 times.' 1
++ error 'Failed to start ECS task after retrying 2 times.'
++ echo 'Failed to start ECS task after retrying 2 times.'
++ /opt/elasticbeanstalk/bin/event-msg dump -e 'Failed to start ECS task after retrying 2 times.' -s 1
++ exit 1
+ 
+
+2026/09/04 01:11:03.513276 [INFO] Executing cleanup logic
+2026/09/04 01:11:03.514296 [INFO] reading generic event message file
+2026/09/04 01:11:03.531182 [WARN] Result message exceeds max result size, dropping event: {Starting new ECS task with awseb-complex-env-hepqamgwnc:1. 1788484171885 INFO}
+2026/09/04 01:11:03.531221 [WARN] Result message exceeds max result size, dropping event: {Stopping ECS task arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca. 1788484216765 INFO}
+2026/09/04 01:11:03.531232 [WARN] Result message exceeds max result size, dropping event: {ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca is STOPPED. 1788484217516 INFO}
+2026/09/04 01:11:03.531247 [WARN] Result message exceeds max result size, dropping event: {Starting new ECS task with awseb-complex-env-hepqamgwnc:1. 1788484221580 INFO}
+2026/09/04 01:11:03.531254 [WARN] Result message exceeds max result size, dropping event: {Stopping ECS task arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396. 1788484259522 INFO}
+2026/09/04 01:11:03.531261 [WARN] Result message exceeds max result size, dropping event: {ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396 is STOPPED. 1788484260344 INFO}
+2026/09/04 01:11:03.531269 [WARN] Result message exceeds max result size, dropping event: {Failed to start ECS task, retrying... 1788484217702 WARN}
+2026/09/04 01:11:03.531276 [WARN] Result message exceeds max result size, dropping event: {Failed to start ECS task, retrying... 1788484260472 WARN}
+2026/09/04 01:11:03.531283 [WARN] Result message exceeds max result size, dropping event: {Failed to start ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/c5ea5ef02fbd4bd79d4f0d95b99452ca is STOPPED. 1788484215111 ERROR}
+2026/09/04 01:11:03.531293 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"ECS task stopped due to: Task failed to start. (nginx:  client:  worker:  server: )","timestamp":1788484216593,"severity":"ERROR"},{"msg":"Failed to start ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396 is STOPPED.","timestamp":1788484258601,"severity":"ERROR"},{"msg":"ECS task stopped due to: Task failed to start. (client:  server:  worker:  nginx: )","timestamp":1788484259395,"severity":"ERROR"},{"msg":"Failed to start ECS task after retrying 2 times.","timestamp":1788484263487,"severity":"ERROR"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1788484263514,"severity":"ERROR"}]}]}
+
+2026/09/04 01:11:03.635853 [INFO] Platform Engine finished execution on command: app-deploy
+
+2026/09/04 01:13:24.223113 [INFO] Starting...
+2026/09/04 01:13:24.223173 [INFO] Starting EBPlatform-PlatformEngine
+2026/09/04 01:13:24.223863 [INFO] reading event message file
+2026/09/04 01:13:24.231061 [INFO] Engine received EB command cfn-hup-exec
+
+2026/09/04 01:13:24.324339 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:330905068651:stack/awseb-e-hepqamgwnc-stack/16a62df0-a7fd-11f1-b5e3-1291bf752513 -r AWSEBAutoScalingGroup --region us-east-1
+2026/09/04 01:13:24.539222 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-east-1:330905068651:stack/awseb-e-hepqamgwnc-stack/16a62df0-a7fd-11f1-b5e3-1291bf752513 -r AWSEBBeanstalkMetadata --region us-east-1
+2026/09/04 01:13:24.719466 [INFO] checking whether command tail-log is applicable to this instance...
+2026/09/04 01:13:24.720099 [INFO] this command is applicable to the instance, thus instance should execute command
+2026/09/04 01:13:24.720109 [INFO] Engine command: (tail-log)
+
+2026/09/04 01:13:24.721482 [INFO] Executing instruction: GetTailLogs
+2026/09/04 01:13:24.721503 [INFO] Tail Logs...
+2026/09/04 01:13:24.729834 [INFO] Running command: tail -n 100 /var/log/docker-events.log
+2026/09/04 01:13:24.733572 [INFO] Running command: tail -n 100 /var/log/docker.log
+2026/09/04 01:13:24.736348 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
+/var/log/eb-ecs-mgr.log
+----------------------------------------
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_HOOKS_DIR=/opt/elasticbeanstalk/hooks
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + . /opt/elasticbeanstalk/hooks/common.sh
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4574]: +++ /opt/elasticbeanstalk/bin/get-config platformconfig -k PlatformConfigDir
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: ++ PLATFORM_CONFIG_DIR=/opt/elasticbeanstalk/config/platformconfig
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: ++ PACKAGES_FILE=/opt/elasticbeanstalk/config/platformconfig/packages.json
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4579]: +++ /opt/elasticbeanstalk/bin/get-config platformconfig -k BakedRegisterFile
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: ++ BAKED_FILE=/opt/elasticbeanstalk/.aws-eb-baked
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4584]: +++ /opt/elasticbeanstalk/bin/get-config platformconfig -k AppSourceBundlePath
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: ++ EB_CONFIG_APP_SOURCE=/opt/elasticbeanstalk/deployment/app_source_bundle
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4589]: +++ /opt/elasticbeanstalk/bin/get-config platformconfig -k AppDeployDir
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: ++ EB_CONFIG_APP_CURRENT=/var/app/current
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4594]: +++ /opt/elasticbeanstalk/bin/get-config platformconfig -k AppStagingDir
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: ++ EB_CONFIG_APP_STAGING=/var/app/staging
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4599]: ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_cluster
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_CONFIG_ECS_CLUSTER=awseb-complex-env-hepqamgwnc
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4604]: ++ /opt/elasticbeanstalk/bin/get-config container -k ecs_task_def
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_CONFIG_ECS_TASK_DEF=awseb-complex-env-hepqamgwnc
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4609]: ++ /opt/elasticbeanstalk/bin/get-config platformconfig -k EcsTaskArnFile
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_CONFIG_ECS_TASK_ARN_FILE=/etc/elasticbeanstalk/.ecs-task-arn
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4614]: ++ /opt/elasticbeanstalk/bin/get-config platformconfig -k DeploymentManifest
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_CONFIG_DEPLOYMENT_MANIFEST=/opt/elasticbeanstalk/deployment/app_version_manifest.json
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + '[' -f /opt/elasticbeanstalk/deployment/app_version_manifest.json ']'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4620]: ++ cat /opt/elasticbeanstalk/deployment/app_version_manifest.json
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4621]: ++ jq -r '.ECS.TaskDefinitionName | select(. != null)'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_TASK_DEF_NAME_FROM_MANIFEST=awseb-complex-env-hepqamgwnc
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4623]: ++ cat /opt/elasticbeanstalk/deployment/app_version_manifest.json
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4624]: ++ jq -r '.ECS.TaskDefinitionRevision | select(. != null)'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_TASK_DEF_REVISION_FROM_MANIFEST=1
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + '[' -z awseb-complex-env-hepqamgwnc ']'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + '[' -z 1 ']'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + EB_CONFIG_ECS_TASK_DEF=awseb-complex-env-hepqamgwnc:1
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + '[' -z awseb-complex-env-hepqamgwnc ']'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + '[' -z awseb-complex-env-hepqamgwnc:1 ']'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + CMD_GET_INSTANCE_ARN='curl -sS http://localhost:51678/v1/metadata | jq -r .ContainerInstanceArn'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + CMD_GET_KNOWN_STATUS='curl -sS http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN | jq -r .KnownStatus'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + CMD_DESCRIBE_INSTANCE='aws ecs describe-container-instances --cluster $EB_CONFIG_ECS_CLUSTER --container-instances $EB_CONFIG_ECS_INSTANCE_ARN 2>&1'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + case "$1" in
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + stop_ecs_task
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + '[' -f /etc/elasticbeanstalk/.ecs-task-arn ']'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4625]: ++ cat /etc/elasticbeanstalk/.ecs-task-arn
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + local EB_CONFIG_ECS_TASK_ARN=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + trace 'Stopping ECS task arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396.'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + echo 'Stopping ECS task arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396.'
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: Stopping ECS task arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396.
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + /opt/elasticbeanstalk/bin/event-msg dump -e 'Stopping ECS task arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396.' -s 0
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + set +e
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4568]: + local ECS_RESPONSE
+Sep  4 01:10:59 ip-10-0-1-39 eb-ecs[4631]: ++ aws ecs stop-task --cluster awseb-complex-env-hepqamgwnc --task arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + ECS_RESPONSE='{
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:    "task": {
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "attachments": [],
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "availabilityZone": "us-east-1a",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "clusterArn": "arn:aws:ecs:us-east-1:330905068651:cluster/awseb-complex-env-hepqamgwnc",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "connectivity": "CONNECTED",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "connectivityAt": "2026-09-04T01:10:22.269000+00:00",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "containerInstanceArn": "arn:aws:ecs:us-east-1:330905068651:container-instance/awseb-complex-env-hepqamgwnc/2326aae5bd8e408bb53cb04fcbea0347",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "containers": [],
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "cpu": "0",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "createdAt": "2026-09-04T01:10:22.269000+00:00",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "desiredStatus": "STOPPED",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "enableExecuteCommand": false,
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "executionStoppedAt": "2026-09-04T01:10:25.958000+00:00",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "group": "family:awseb-complex-env-hepqamgwnc",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "lastStatus": "STOPPED",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "launchType": "EC2",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "memory": "512",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "overrides": {
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:            "containerOverrides": [],
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:            "inferenceAcceleratorOverrides": []
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        },
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "pullStartedAt": "2026-09-04T01:10:24.967000+00:00",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "pullStoppedAt": "2026-09-04T01:10:48.195000+00:00",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "stopCode": "TaskFailedToStart",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "stoppedAt": "2026-09-04T01:10:56.640000+00:00",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "stoppedReason": "Task failed to start",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "stoppingAt": "2026-09-04T01:10:56.640000+00:00",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "tags": [],
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "taskArn": "arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "taskDefinitionArn": "arn:aws:ecs:us-east-1:330905068651:task-definition/awseb-complex-env-hepqamgwnc:1",
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:        "version": 4
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]:    }
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: }'
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + '[' 0 -ne 0 ']'
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + set -e
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + local STOP_TIMEOUT=120
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + local TIMEOUT=120
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4636]: ++ eval curl -sS 'http://localhost:51678/v1/tasks?taskarn=$EB_CONFIG_ECS_TASK_ARN' '|' jq -r .KnownStatus
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4638]: +++ jq -r .KnownStatus
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4637]: +++ curl -sS 'http://localhost:51678/v1/tasks?taskarn=arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396'
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + local KNOWN_STATUS=STOPPED
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + '[' STOPPED '!=' STOPPED ']'
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + trace 'ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396 is STOPPED.'
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + echo 'ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396 is STOPPED.'
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396 is STOPPED.
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + /opt/elasticbeanstalk/bin/event-msg dump -e 'ECS task: arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396 is STOPPED.' -s 0
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + TIMEOUT=60
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4645]: ++ docker ps -q
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4646]: ++ wc -l
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + '[' 1 '!=' 1 ']'
+Sep  4 01:11:00 ip-10-0-1-39 eb-ecs[4568]: + exit 0
+
+
+----------------------------------------
+/var/log/ecs/ecs-agent.log
+----------------------------------------
+level=info time=2026-09-04T01:10:24Z msg="Sending state change to ECS" taskArn="arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396" taskReason="" taskPullStoppedAt="0001-01-01T00:00:00Z" taskExecutionStoppedAt="0001-01-01T00:00:00Z" containerChange-1="containerName=nginx containerStatus=MANIFEST_PULLED containerKnownSentStatus=NONE containerRuntimeID= containerIsEssential=true" eventType="TaskStateChange" taskStatus="MANIFEST_PULLED" taskKnownSentStatus="NONE" taskPullStartedAt="2026-09-04T01:10:24Z" containerChange-0="containerName=client containerStatus=MANIFEST_PULLED containerKnownSentStatus=NONE containerRuntimeID= containerIsEssential=true" containerChange-2="containerName=worker containerStatus=MANIFEST_PULLED containerKnownSentStatus=NONE containerRuntimeID= containerIsEssential=true" containerChange-3="containerName=server containerStatus=MANIFEST_PULLED containerKnownSentStatus=NONE containerRuntimeID= containerIsEssential=true"
+level=info time=2026-09-04T01:10:24Z msg="Pulling image for container concurrently" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" image="adrianasviana/multi-server"
+level=info time=2026-09-04T01:10:24Z msg="Prepared a canonical reference for image pull" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" image="adrianasviana/multi-server" imageDigest="sha256:7e1634042cf825c436a05b0328a7de96c82efed86fdddd6dab88a9558b36605a" imageRef="adrianasviana/multi-server@sha256:7e1634042cf825c436a05b0328a7de96c82efed86fdddd6dab88a9558b36605a"
+level=info time=2026-09-04T01:10:24Z msg="Successfully tagged image" container="nginx" image="adrianasviana/multi-nginx" imageRef="adrianasviana/multi-nginx@sha256:994242c363ebb0ac1498c094be60969e1dc83aa58e8634fb2ab0545bd5836f02" task="589adc81ab3d4e13bf1316c0fdca7396"
+level=info time=2026-09-04T01:10:24Z msg="Updating container reference in image state" container="nginx" image="adrianasviana/multi-nginx" state="sha256:915074b05bed13d5f3b9b949d48a399a10f46fa537dd0c37ca0268b63c4b9ef0"
+level=info time=2026-09-04T01:10:24Z msg="Successfully tagged image" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" image="adrianasviana/multi-worker" imageRef="adrianasviana/multi-worker@sha256:3753b0b25329ceae3b02265566f5f3c62b35da1b87475607ff2a1e1d8a935569"
+level=info time=2026-09-04T01:10:24Z msg="Updating container reference in image state" container="worker" image="adrianasviana/multi-worker" state="sha256:9d755e403261335a1e37d24c321ee2c7d1982e75c8605de8d15c0176b47e7bbc"
+level=info time=2026-09-04T01:10:24Z msg="Finished pulling image for container" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" image="adrianasviana/multi-worker" elapsed="56.875991ms" elapsedMs=56
+level=info time=2026-09-04T01:10:24Z msg="Handling container change event" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" runtimeID="" changeEventStatus="PULLED" knownStatus="MANIFEST_PULLED" desiredStatus="RUNNING"
+level=info time=2026-09-04T01:10:24Z msg="Finished pulling image for container" elapsed="71.849408ms" elapsedMs=71 task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" image="adrianasviana/multi-nginx"
+level=info time=2026-09-04T01:10:24Z msg="Successfully tagged image" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" image="adrianasviana/multi-server" imageRef="adrianasviana/multi-server@sha256:7e1634042cf825c436a05b0328a7de96c82efed86fdddd6dab88a9558b36605a"
+level=info time=2026-09-04T01:10:24Z msg="Updating container reference in image state" image="adrianasviana/multi-server" state="sha256:e238f708d984b7e95fff2757d310da36960198342ee5880e893bf0891bd243d9" container="server"
+level=info time=2026-09-04T01:10:24Z msg="Handling container change event" task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" runtimeID="" changeEventStatus="PULLED" knownStatus="MANIFEST_PULLED" desiredStatus="RUNNING"
+level=info time=2026-09-04T01:10:24Z msg="Creating container" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker"
+level=info time=2026-09-04T01:10:24Z msg="Created container name mapping for task" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" dockerContainerName="ecs-awseb-complex-env-hepqamgwnc-1-worker-d6d9a7ab8092c4f8c201"
+level=info time=2026-09-04T01:10:24Z msg="Finished pulling image for container" elapsed="51.777567ms" elapsedMs=51 task="589adc81ab3d4e13bf1316c0fdca7396" container="server" image="adrianasviana/multi-server"
+level=info time=2026-09-04T01:10:24Z msg="Handling container change event" changeEventStatus="PULLED" knownStatus="MANIFEST_PULLED" desiredStatus="RUNNING" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" runtimeID=""
+level=info time=2026-09-04T01:10:24Z msg="Creating container" container="nginx" task="589adc81ab3d4e13bf1316c0fdca7396"
+level=info time=2026-09-04T01:10:24Z msg="Created container name mapping for task" dockerContainerName="ecs-awseb-complex-env-hepqamgwnc-1-nginx-96dcc79ccef19cd58001" task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx"
+level=warn time=2026-09-04T01:10:24Z msg="DockerGoClient: Error while pulling image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=error time=2026-09-04T01:10:24Z msg="DockerGoClient: failed to pull image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: [CannotPullContainerError] no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=info time=2026-09-04T01:10:24Z msg="Creating container" task="589adc81ab3d4e13bf1316c0fdca7396" container="server"
+level=info time=2026-09-04T01:10:24Z msg="Created container name mapping for task" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" dockerContainerName="ecs-awseb-complex-env-hepqamgwnc-1-server-facda5f8ece19b8d3400"
+level=info time=2026-09-04T01:10:24Z msg="Created docker container for task" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" dockerId="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3" elapsed=43.607466ms
+level=info time=2026-09-04T01:10:24Z msg="Created docker container for task" dockerId="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751" elapsed=43.096195ms task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx"
+level=info time=2026-09-04T01:10:24Z msg="Handling container change event" changeEventStatus="CREATED" knownStatus="PULLED" desiredStatus="RUNNING" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" runtimeID="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3"
+level=info time=2026-09-04T01:10:24Z msg="Handling container change event" desiredStatus="RUNNING" task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" runtimeID="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751" changeEventStatus="CREATED" knownStatus="PULLED"
+level=info time=2026-09-04T01:10:24Z msg="Starting container" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" runtimeID="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3"
+level=info time=2026-09-04T01:10:24Z msg="Created docker container for task" dockerId="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501" elapsed=40.271608ms task="589adc81ab3d4e13bf1316c0fdca7396" container="server"
+level=info time=2026-09-04T01:10:24Z msg="ENI Watcher: received udev event" interface="veth791689a" devpath="/devices/virtual/net/veth791689a" primaryMAC="02:ad:cb:6c:25:d5" action="add" subsystem="net"
+level=info time=2026-09-04T01:10:24Z msg="ENI Watcher: received udev event" action="add" subsystem="net" interface="veth0abf6c7" devpath="/devices/virtual/net/veth0abf6c7" primaryMAC="02:ad:cb:6c:25:d5"
+level=info time=2026-09-04T01:10:24Z msg="Handling container change event" desiredStatus="RUNNING" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" runtimeID="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501" changeEventStatus="CREATED" knownStatus="PULLED"
+level=info time=2026-09-04T01:10:24Z msg="Starting container" task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" runtimeID="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751"
+level=info time=2026-09-04T01:10:24Z msg="ENI Watcher: received udev event" primaryMAC="02:ad:cb:6c:25:d5" action="add" subsystem="net" interface="veth1357669" devpath="/devices/virtual/net/veth1357669"
+level=info time=2026-09-04T01:10:24Z msg="ENI Watcher: received udev event" primaryMAC="02:ad:cb:6c:25:d5" action="add" subsystem="net" interface="vethcb63daa" devpath="/devices/virtual/net/vethcb63daa"
+level=info time=2026-09-04T01:10:24Z msg="Starting container" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" runtimeID="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501"
+level=info time=2026-09-04T01:10:24Z msg="ENI Watcher: received udev event" action="add" subsystem="net" interface="vethfc702e0" devpath="/devices/virtual/net/vethfc702e0" primaryMAC="02:ad:cb:6c:25:d5"
+level=info time=2026-09-04T01:10:24Z msg="ENI Watcher: received udev event" subsystem="net" interface="veth6d5579b" devpath="/devices/virtual/net/veth6d5579b" primaryMAC="02:ad:cb:6c:25:d5" action="add"
+level=info time=2026-09-04T01:10:24Z msg="ENI Watcher: received udev event" primaryMAC="02:ad:cb:6c:25:d5" action="remove" subsystem="net" interface="veth791689a" devpath="/devices/virtual/net/veth791689a"
+level=info time=2026-09-04T01:10:25Z msg="Handling container change event" runtimeID="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3" changeEventStatus="RUNNING" knownStatus="CREATED" desiredStatus="RUNNING" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker"
+level=info time=2026-09-04T01:10:25Z msg="Start streaming metrics for container" runtimeID="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3"
+level=info time=2026-09-04T01:10:25Z msg="Started container" elapsed=516.129008ms task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" runtimeID="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3"
+level=info time=2026-09-04T01:10:25Z msg="ENI Watcher: received udev event" primaryMAC="02:ad:cb:6c:25:d5" action="remove" subsystem="net" interface="vethfc702e0" devpath="/devices/virtual/net/vethfc702e0"
+level=info time=2026-09-04T01:10:25Z msg="ENI Watcher: received udev event" devpath="/devices/virtual/net/veth1357669" primaryMAC="02:ad:cb:6c:25:d5" action="remove" subsystem="net" interface="veth1357669"
+level=info time=2026-09-04T01:10:25Z msg="Started container" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" runtimeID="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501" elapsed=634.115056ms
+level=info time=2026-09-04T01:10:25Z msg="Handling container change event" knownStatus="CREATED" desiredStatus="RUNNING" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" runtimeID="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501" changeEventStatus="RUNNING"
+level=info time=2026-09-04T01:10:25Z msg="Start streaming metrics for container" runtimeID="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501"
+level=info time=2026-09-04T01:10:25Z msg="Handling container change event" task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" runtimeID="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751" changeEventStatus="RUNNING" knownStatus="CREATED" desiredStatus="RUNNING"
+level=info time=2026-09-04T01:10:25Z msg="Start streaming metrics for container" runtimeID="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751"
+level=info time=2026-09-04T01:10:25Z msg="Started container" elapsed=754.154906ms task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" runtimeID="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751"
+level=info time=2026-09-04T01:10:25Z msg="ENI Watcher: received udev event" interface="veth1357669" devpath="/devices/virtual/net/veth1357669" primaryMAC="02:ad:cb:6c:25:d5" action="add" subsystem="net"
+level=info time=2026-09-04T01:10:25Z msg="ENI Watcher: received udev event" subsystem="net" interface="veth1357669" devpath="/devices/virtual/net/veth1357669" primaryMAC="02:ad:cb:6c:25:d5" action="move"
+level=info time=2026-09-04T01:10:25Z msg="ENI Watcher: received udev event" primaryMAC="02:ad:cb:6c:25:d5" action="remove" subsystem="net" interface="veth1357669" devpath="/devices/virtual/net/veth1357669"
+level=info time=2026-09-04T01:10:25Z msg="ENI Watcher: received udev event" action="remove" subsystem="net" interface="vethcb63daa" devpath="/devices/virtual/net/vethcb63daa" primaryMAC="02:ad:cb:6c:25:d5"
+level=info time=2026-09-04T01:10:25Z msg="Handling container change event" task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" runtimeID="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751" changeEventStatus="STOPPED" knownStatus="RUNNING" desiredStatus="RUNNING"
+level=info time=2026-09-04T01:10:25Z msg="Essential container stopped; recording task stopped time" task="589adc81ab3d4e13bf1316c0fdca7396" container="nginx" executionStoppedAt="2026-09-04 01:10:25.958584251 +0000 UTC m=+80.263189210"
+level=info time=2026-09-04T01:10:25Z msg="Essential container stopped; updated task desired status to stopped" nContainers=4 nENIs=0 taskFamily="awseb-complex-env-hepqamgwnc" taskVersion="1" taskArn="arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396" taskKnownStatus="MANIFEST_PULLED" taskDesiredStatus="STOPPED"
+level=info time=2026-09-04T01:10:25Z msg="Stopping container stats collection" runtimeID="46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751"
+level=info time=2026-09-04T01:10:25Z msg="Stopping container" container="worker" task="589adc81ab3d4e13bf1316c0fdca7396"
+level=info time=2026-09-04T01:10:25Z msg="Handling resource state change" task="589adc81ab3d4e13bf1316c0fdca7396" resource="cgroup" status="REMOVED" knownStatus="CREATED"
+level=info time=2026-09-04T01:10:25Z msg="Stopping container" task="589adc81ab3d4e13bf1316c0fdca7396" container="server"
+level=info time=2026-09-04T01:10:25Z msg="Handling container change event" task="589adc81ab3d4e13bf1316c0fdca7396" container="client" runtimeID="" changeEventStatus="STOPPED" knownStatus="MANIFEST_PULLED" desiredStatus="STOPPED"
+level=info time=2026-09-04T01:10:26Z msg="Successfully published instance status message to TCS with request ID: 44ea27c3-23f6-4c6b-b359-e3d66e26eb70"
+level=warn time=2026-09-04T01:10:30Z msg="DockerGoClient: Error while pulling image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=error time=2026-09-04T01:10:30Z msg="DockerGoClient: failed to pull image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: [CannotPullContainerError] no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=warn time=2026-09-04T01:10:36Z msg="DockerGoClient: Error while pulling image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=error time=2026-09-04T01:10:36Z msg="DockerGoClient: failed to pull image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: [CannotPullContainerError] no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=info time=2026-09-04T01:10:37Z msg="Sending state change to ECS" taskPullStartedAt="2026-09-04T01:10:24Z" containerChange-0="containerName=worker containerStatus=RUNNING containerKnownSentStatus=MANIFEST_PULLED containerRuntimeID=5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 containerIsEssential=true" containerChange-1="containerName=server containerStatus=RUNNING containerKnownSentStatus=MANIFEST_PULLED containerRuntimeID=7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 containerIsEssential=true" containerChange-3="containerName=nginx containerStatus=STOPPED containerExitCode=1 containerPortBindings=[{80  80 0.0.0.0 0} {80  80 :: 0}] containerKnownSentStatus=MANIFEST_PULLED containerRuntimeID=46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751 containerIsEssential=true" containerChange-4="containerName=client containerStatus=STOPPED containerKnownSentStatus=MANIFEST_PULLED containerRuntimeID= containerIsEssential=true" eventType="TaskStateChange" taskArn="arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396" taskStatus="MANIFEST_PULLED" taskReason="" taskPullStoppedAt="2026-09-04T01:10:24Z" taskExecutionStoppedAt="2026-09-04T01:10:25Z" containerChange-2="containerName=nginx containerStatus=RUNNING containerPortBindings=[{80  80 0.0.0.0 0} {80  80 :: 0}] containerKnownSentStatus=MANIFEST_PULLED containerRuntimeID=46f57f39ae153a9a3f00d8b8bd36c310fe3ea7a411e45bbe862ff76791b97751 containerIsEssential=true" taskKnownSentStatus="MANIFEST_PULLED"
+level=warn time=2026-09-04T01:10:41Z msg="DockerGoClient: Error while pulling image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=error time=2026-09-04T01:10:41Z msg="DockerGoClient: failed to pull image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: [CannotPullContainerError] no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=warn time=2026-09-04T01:10:47Z msg="DockerGoClient: Error while pulling image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=error time=2026-09-04T01:10:47Z msg="DockerGoClient: failed to pull image adrianasviana/multi-client@sha256:9ed46162de13063d4d4256817bba92914744f3af8f6a83de608510e50f134f6c: [CannotPullContainerError] no matching manifest for linux/amd64 in the manifest list entries" module=docker_client.go
+level=error time=2026-09-04T01:10:47Z msg="Error inspecting image" containerDesiredStatus="STOPPED" containerExitCode="nil" error="Error response from daemon: No such image: adrianasviana/multi-client:latest" containerName="client" containerImage="adrianasviana/multi-client" containerKnownStatus="STOPPED"
+level=error time=2026-09-04T01:10:47Z msg="Unable to add container reference to image state" task="589adc81ab3d4e13bf1316c0fdca7396" container="client" error="Error response from daemon: No such image: adrianasviana/multi-client:latest"
+level=error time=2026-09-04T01:10:47Z msg="Failed to pull image for container" task="589adc81ab3d4e13bf1316c0fdca7396" container="client" image="adrianasviana/multi-client" error="no matching manifest for linux/amd64 in the manifest list entries"
+level=error time=2026-09-04T01:10:47Z msg="Error transitioning container" task="589adc81ab3d4e13bf1316c0fdca7396" container="client" runtimeID="" nextState="PULLED" error="no matching manifest for linux/amd64 in the manifest list entries"
+level=info time=2026-09-04T01:10:47Z msg="Handling container change event" knownStatus="STOPPED" desiredStatus="STOPPED" task="589adc81ab3d4e13bf1316c0fdca7396" container="client" runtimeID="" changeEventStatus="PULLED"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" action="add" subsystem="net" interface="veth791689a" devpath="/devices/virtual/net/veth791689a" primaryMAC="02:ad:cb:6c:25:d5"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" primaryMAC="02:ad:cb:6c:25:d5" action="move" subsystem="net" interface="veth791689a" devpath="/devices/virtual/net/veth791689a"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" primaryMAC="02:ad:cb:6c:25:d5" action="add" subsystem="net" interface="vethfc702e0" devpath="/devices/virtual/net/vethfc702e0"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" subsystem="net" interface="vethfc702e0" devpath="/devices/virtual/net/vethfc702e0" primaryMAC="02:ad:cb:6c:25:d5" action="move"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" action="remove" subsystem="net" interface="veth791689a" devpath="/devices/virtual/net/veth791689a" primaryMAC="02:ad:cb:6c:25:d5"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" devpath="/devices/virtual/net/veth0abf6c7" primaryMAC="02:ad:cb:6c:25:d5" action="remove" subsystem="net" interface="veth0abf6c7"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" devpath="/devices/virtual/net/vethfc702e0" primaryMAC="02:ad:cb:6c:25:d5" action="remove" subsystem="net" interface="vethfc702e0"
+level=error time=2026-09-04T01:10:56Z msg="Received a docker stat object with duplicate timestamp" module=queue.go
+level=info time=2026-09-04T01:10:56Z msg="Handling container change event" task="589adc81ab3d4e13bf1316c0fdca7396" container="worker" runtimeID="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3" changeEventStatus="STOPPED" knownStatus="RUNNING" desiredStatus="STOPPED"
+level=info time=2026-09-04T01:10:56Z msg="Stopping container stats collection" runtimeID="5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3"
+level=info time=2026-09-04T01:10:56Z msg="ENI Watcher: received udev event" interface="veth6d5579b" devpath="/devices/virtual/net/veth6d5579b" primaryMAC="02:ad:cb:6c:25:d5" action="remove" subsystem="net"
+level=error time=2026-09-04T01:10:56Z msg="Received a docker stat object with duplicate timestamp" module=queue.go
+level=info time=2026-09-04T01:10:56Z msg="Handling container change event" knownStatus="RUNNING" desiredStatus="STOPPED" task="589adc81ab3d4e13bf1316c0fdca7396" container="server" runtimeID="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501" changeEventStatus="STOPPED"
+level=info time=2026-09-04T01:10:56Z msg="Container change also resulted in task change" task="589adc81ab3d4e13bf1316c0fdca7396" container="client" runtimeID="" desiredStatus="STOPPED" knownStatus="STOPPED"
+level=info time=2026-09-04T01:10:56Z msg="Stopping container stats collection" runtimeID="7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501"
+level=info time=2026-09-04T01:10:56Z msg="Sending state change to ECS" eventType="TaskStateChange" taskReason="" taskPullStoppedAt="2026-09-04T01:10:47Z" taskExecutionStoppedAt="2026-09-04T01:10:25Z" containerChange-0="containerName=worker containerStatus=STOPPED containerExitCode=137 containerKnownSentStatus=RUNNING containerRuntimeID=5c2a0f6b18c5f7a4b832fc58e13e67d62314c1aad4eebac166bf4c7a8ea008e3 containerIsEssential=true" containerChange-1="containerName=server containerStatus=STOPPED containerExitCode=137 containerKnownSentStatus=RUNNING containerRuntimeID=7a6e4854a724c5b1c85a7c547ca916975f7e738ec11ecdb35abfe0ebe1bb3501 containerIsEssential=true" taskArn="arn:aws:ecs:us-east-1:330905068651:task/awseb-complex-env-hepqamgwnc/589adc81ab3d4e13bf1316c0fdca7396" taskStatus="STOPPED" taskKnownSentStatus="MANIFEST_PULLED" taskPullStartedAt="2026-09-04T01:10:24Z"
+level=info time=2026-09-04T01:10:56Z msg="Managed task has reached stopped; waiting for container cleanup" task="589adc81ab3d4e13bf1316c0fdca7396"
+level=info time=2026-09-04T01:11:06Z msg="Successfully published instance status message to TCS with request ID: f86a2449-5582-4211-b6e3-3c7b70db2f9f"
+level=info time=2026-09-04T01:11:26Z msg="Successfully published instance status message to TCS with request ID: 1f1208e4-8925-4601-8c50-bb18445c63d6"
+level=info time=2026-09-04T01:11:46Z msg="Successfully published instance status message to TCS with request ID: 37827fa6-fa5b-41a7-92f1-ed8a459b3400"
+level=info time=2026-09-04T01:12:06Z msg="Successfully published instance status message to TCS with request ID: 6d9c97a0-6233-433d-9e15-ef31c7d57b15"
+level=info time=2026-09-04T01:12:46Z msg="Successfully published instance status message to TCS with request ID: 1bb880d6-f9be-415a-8ee7-3cc3865e939c"
+level=info time=2026-09-04T01:13:06Z msg="Successfully published instance status message to TCS with request ID: 2d2a96eb-57f3-4d0f-9abb-221045ab7426"
+
+
+----------------------------------------
+/var/log/ecs/ecs-init.log
+----------------------------------------
+level=info time=2026-09-04T01:09:03Z msg="Successfully created docker client with API version 1.25"
+level=info time=2026-09-04T01:09:03Z msg="pre-start"
+level=info time=2026-09-04T01:09:03Z msg="pre-start: enabling loopback routing"
+level=info time=2026-09-04T01:09:03Z msg="pre-start: disabling ipv6 router advertisements"
+level=info time=2026-09-04T01:09:03Z msg="pre-start: adding routes for TMDS access on IPv6-only host if applicable"
+level=info time=2026-09-04T01:09:03Z msg="logger=structured msg=\"Found route from the given net link\" Route=\"{Ifindex: 2 Dst: 0.0.0.0/0 Src: 10.0.1.39 Gw: 10.0.1.1 Flags: [] Table: 254 Realm: 0}\" IPFamilyCode=2 IPFamilyName=\"IPv4\""
+level=info time=2026-09-04T01:09:03Z msg="pre-start: creating credentials proxy route"
+level=info time=2026-09-04T01:09:03Z msg="Successfully blocked IPv6 off-host access for introspection server with ip6tables."
+level=info time=2026-09-04T01:09:03Z msg="Successfully blocked IPv6 off-host access for introspection server with ip6tables."
+level=info time=2026-09-04T01:09:03Z msg="pre-start: checking ecs agent container image loaded presence"
+level=info time=2026-09-04T01:09:03Z msg="pre-start: ecs agent container image loaded presence: false"
+level=info time=2026-09-04T01:09:03Z msg="pre-start: reloading agent"
+level=info time=2026-09-04T01:09:05Z msg="Successfully created docker client with API version 1.25"
+level=info time=2026-09-04T01:09:05Z msg="start"
+level=info time=2026-09-04T01:09:05Z msg="No existing agent container to remove."
+level=info time=2026-09-04T01:09:05Z msg="Starting Amazon Elastic Container Service Agent"
+level=info time=2026-09-04T01:09:05Z msg="cloud-init result file not found at /var/lib/cloud/data/result.json, skip binding it to Agent container: stat /var/lib/cloud/data/result.json: no such file or directory"
+level=info time=2026-09-04T01:09:05Z msg="Operating system family is: amzn_2023"
+
+

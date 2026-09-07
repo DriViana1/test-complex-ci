@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature/github-actions-ci
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      BEANSTALK_BUCKET: complex-beanstalk-1943c38ed6c6032fb48a02b4c4
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::330905068651:role/git-role-aws
+          aws-region: us-east-1
+
+      - name: Check AWS identity
+        run: aws sts get-caller-identity
+      
+      - name: Set image tag 
+        run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+      - name: Update Dockerrun image tags
+        run: |
+          sed -i "s/:v2/:${IMAGE_TAG}/g" Dockerrun.aws.json
+
+      - name: Docker version
+        run: docker --version     
+
+      - name: Build client test image
+        run: docker build -t react-test -f ./client/Dockerfile.dev ./client
+
+      - name: Run client tests
+        run: docker run react-test npm test -- --coverage --watchAll=false
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Build client image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-client:${IMAGE_TAG} ./client
+
+      - name: Build nginx image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-nginx:${IMAGE_TAG} ./nginx
+
+      - name: Build server
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-server:${IMAGE_TAG} -f ./server/Dockerfile.dev ./server
+
+      - name: Build worker
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker:${IMAGE_TAG} -f ./worker/Dockerfile.dev ./worker
+      
+      - name: Push client
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-client:${IMAGE_TAG}  
+
+      - name: Push nginx
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-nginx:${IMAGE_TAG}
+
+      - name: Push server
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-server:${IMAGE_TAG}
+
+      - name: Push worker
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker:${IMAGE_TAG}
+
+      - name: Upload Dockerrun to S3
+        run: |
+          aws s3 cp Dockerrun.aws.json \
+            s3://${BEANSTALK_BUCKET}/Dockerrun-${IMAGE_TAG}.aws.json
+
+      - name: Create Elastic Beanstalk application version
+        run: |
+          aws elasticbeanstalk create-application-version \
+            --application-name complex \
+            --version-label "complex-${IMAGE_TAG}" \
+            --source-bundle S3Bucket="${BEANSTALK_BUCKET}",S3Key="Dockerrun-${IMAGE_TAG}.aws.json" \
+            --process
+
+      - name: Check application version
+        run: |
+          aws elasticbeanstalk describe-application-versions \
+            --application-name complex \
+            --version-label "complex-${IMAGE_TAG}"
+
+      - name: Deploy to Elastic Beanstalk
+        run: |
+          aws elasticbeanstalk update-environment \
+            --environment-name complex-env \
+            --version-label "complex-${IMAGE_TAG}"
+
+          aws elasticbeanstalk wait environment-updated \
+            --environment-name complex-env
+#testepermission2 
