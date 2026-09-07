@@ -82,8 +82,6 @@ resource "aws_elastic_beanstalk_environment" "complex" {
   application         = aws_elastic_beanstalk_application.complex.name
   solution_stack_name = "64bit Amazon Linux 2023 v4.7.7 running ECS"
 
-  version_label = aws_elastic_beanstalk_application_version.complex.name
-
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "IamInstanceProfile"
@@ -135,11 +133,6 @@ resource "aws_s3_object" "dockerrun" {
 
   etag = filemd5("${path.module}/../Dockerrun.aws.json")
 }
-resource "aws_elastic_beanstalk_application_version" "complex" {
-  name        = "complex-${formatdate("YYYYMMDDhhmmss", timestamp())}"
-  application = aws_elastic_beanstalk_application.complex.name
-  description = "Versão da aplicação usando Dockerrun.aws.json"
-
-  bucket = aws_s3_bucket.beanstalk.id
-  key    = aws_s3_object.dockerrun.key
+output "beanstalk_bucket_name" {
+  value = aws_s3_bucket.beanstalk.bucket
 }
