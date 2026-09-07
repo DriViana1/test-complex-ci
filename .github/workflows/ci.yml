@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      BEANSTALK_BUCKET: complex-beanstalk-1943c38ed6c6032fb48a02b4c4
+
     permissions:
       id-token: write
       contents: read
@@ -70,30 +73,17 @@ jobs:
       - name: Push worker
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker:${IMAGE_TAG}
 
-      - name: Get Elastic Beanstalk S3 bucket
-        run: |
-          BEANSTALK_BUCKET=$(aws s3api list-buckets \
-          --query "Buckets[?starts_with(Name, 'complex-beanstalk-')].Name | [0]" \
-          --output text)
-
-          if [ -z "$BEANSTALK_BUCKET" ] || [ "$BEANSTALK_BUCKET" = "None" ]; then
-            echo "Elastic Beanstalk S3 bucket not found"
-            exit 1
-          fi
-
-          echo "BEANSTALK_BUCKET=$BEANSTALK_BUCKET" >> $GITHUB_ENV
-          echo "Using bucket: $BEANSTALK_BUCKET"
-
       - name: Upload Dockerrun to S3
         run: |
-          aws s3 cp Dockerrun.aws.json s3://${BEANSTALK_BUCKET}/Dockerrun-${IMAGE_TAG}.aws.json
+          aws s3 cp Dockerrun.aws.json \
+            s3://${BEANSTALK_BUCKET}/Dockerrun-${IMAGE_TAG}.aws.json
 
       - name: Create Elastic Beanstalk application version
         run: |
           aws elasticbeanstalk create-application-version \
-            --application-name complex \
-            --version-label "complex-${IMAGE_TAG}" \
-            --source-bundle S3Bucket="complex-beanstalk-0c29dc86b1f767fc9edcfd343a",S3Key="Dockerrun-${IMAGE_TAG}.aws.json"
+          --application-name complex \
+          --version-label "complex-${IMAGE_TAG}" \
+          --source-bundle S3Bucket="${BEANSTALK_BUCKET}",S3Key="Dockerrun-${IMAGE_TAG}.aws.json"
 
       - name: Deploy to Elastic Beanstalk
         run: |
