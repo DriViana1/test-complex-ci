@@ -84,17 +84,16 @@ jobs:
       - name: Create Elastic Beanstalk application version
         run: |
           aws elasticbeanstalk create-application-version \
-          --application-name complex \
-          --version-label "complex-${IMAGE_TAG}" \
-          --source-bundle S3Bucket="${BEANSTALK_BUCKET}",S3Key="Dockerrun-${IMAGE_TAG}.aws.json"
+            --application-name complex \
+            --version-label "complex-${IMAGE_TAG}" \
+            --source-bundle S3Bucket="${BEANSTALK_BUCKET}",S3Key="Dockerrun-${IMAGE_TAG}.aws.json" \
+            --process
 
       - name: Check application version
         run: |
           aws elasticbeanstalk describe-application-versions \
             --application-name complex \
-            --version-label "complex-${IMAGE_TAG}" \
-            --source-bundle S3Bucket="${BEANSTALK_BUCKET}",S3Key="Dockerrun-${IMAGE_TAG}.aws.json" \
-            --process
+            --version-label "complex-${IMAGE_TAG}"
 
       - name: Deploy to Elastic Beanstalk
         run: |
