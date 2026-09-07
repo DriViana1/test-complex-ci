@@ -70,9 +70,23 @@ jobs:
       - name: Push worker
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker:${IMAGE_TAG}
 
+      - name: Get Elastic Beanstalk S3 bucket
+        run: |
+          BEANSTALK_BUCKET=$(aws s3api list-buckets \
+          --query "Buckets[?starts_with(Name, 'complex-beanstalk-')].Name | [0]" \
+          --output text)
+
+          if [ -z "$BEANSTALK_BUCKET" ] || [ "$BEANSTALK_BUCKET" = "None" ]; then
+            echo "Elastic Beanstalk S3 bucket not found"
+            exit 1
+          fi
+
+          echo "BEANSTALK_BUCKET=$BEANSTALK_BUCKET" >> $GITHUB_ENV
+          echo "Using bucket: $BEANSTALK_BUCKET"
+
       - name: Upload Dockerrun to S3
         run: |
-          aws s3 cp Dockerrun.aws.json s3://complex-beanstalk-0c29dc86b1f767fc9edcfd343a/Dockerrun-${IMAGE_TAG}.aws.json
+          aws s3 cp Dockerrun.aws.json s3://${BEANSTALK_BUCKET}/Dockerrun-${IMAGE_TAG}.aws.json
 
       - name: Create Elastic Beanstalk application version
         run: |
