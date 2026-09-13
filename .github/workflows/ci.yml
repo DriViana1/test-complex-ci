@@ -81,7 +81,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -95,30 +95,28 @@ jobs:
         working-directory: terraform
         run: terraform init
 
+      - name: Get Beanstalk bucket
+        id: bucket
+        working-directory: terraform
+        run: |
+          echo "bucket=$(terraform output -raw beanstalk_bucket_name)" >> "$GITHUB_OUTPUT"
+          
       - name: Update Dockerrun image tags
         run: |
           sed -i "s/:v2/:${IMAGE_TAG}/g" Dockerrun.aws.json
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::330905068651:role/git-role-aws
-          aws-region: us-east-1
 
-      - name: Check AWS identity
-        run: aws sts get-caller-identity
-        
       - name: Upload Dockerrun to S3
         run: |
           aws s3 cp Dockerrun.aws.json \
-            s3://${BEANSTALK_BUCKET}/Dockerrun-${IMAGE_TAG}.aws.json
+            s3://${{ steps.bucket.outputs.bucket }}/Dockerrun-${IMAGE_TAG}.aws.json
 
       - name: Create Elastic Beanstalk application version
         run: |
           aws elasticbeanstalk create-application-version \
             --application-name complex \
             --version-label "complex-${IMAGE_TAG}" \
-            --source-bundle S3Bucket="${BEANSTALK_BUCKET}",S3Key="Dockerrun-${IMAGE_TAG}.aws.json" \
+            --source-bundle S3Bucket="${{ steps.bucket.outputs.bucket }}",S3Key="Dockerrun-${IMAGE_TAG}.aws.json" \
             --process
 
       - name: Check application version
