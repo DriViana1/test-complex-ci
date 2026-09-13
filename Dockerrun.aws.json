@@ -1,0 +1,39 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+    "name": "nginx",
+    "image": "adrianasviana/multi-nginx:v2",
+    "essential": true,
+    "memory": 128,
+    "portMappings": [
+    {
+      "hostPort": 80,
+      "containerPort": 80
+    }
+    ],
+    "links": [
+        "client",
+        "server"
+      ]
+  },
+    {
+      "name": "server",
+      "image": "adrianasviana/multi-server:v2",
+      "essential": true,
+      "memory": 128
+    },
+    {
+    "name": "client",
+    "image": "adrianasviana/multi-client:v2",
+    "essential": true,
+    "memory": 128
+  },
+  {
+    "name": "worker",
+    "image": "adrianasviana/multi-worker:v2",
+    "essential": true,
+    "memory": 128
+  }
+  ]
+}
