@@ -1,5 +1,6 @@
-# Antes de executar este workflow, crie um bucket S3 e atualize
-# o nome do bucket no arquivo terraform/main.tf
+# Antes de executar este workflow, crie um bucket S3 e 
+# atualize o nome do bucket no arquivo terraform/main.tf
+# 
 
 name: CI/CD
 
