@@ -136,3 +136,11 @@ jobs:
 
           aws elasticbeanstalk wait environment-updated \
             --environment-name complex-env
+
+      - name: Check Elastic Beanstalk health
+        run: |
+          aws elasticbeanstalk describe-environments \
+            --application-name complex \
+            --environment-names complex-env \
+            --query 'Environments[0].[Status,Health,HealthStatus,VersionLabel]' \
+            --output table
