@@ -139,9 +139,32 @@ jobs:
 
       - name: Check Elastic Beanstalk health
         run: |
-          aws elasticbeanstalk describe-environments \
+          HEALTH=$(aws elasticbeanstalk describe-environments \
             --application-name complex \
             --environment-names complex-env \
-            --query 'Environments[0].[Status,Health,HealthStatus,VersionLabel]' \
-            --output table
+            --query 'Environments[0].Health' \
+            --output text)
+
+          HEALTH_STATUS=$(aws elasticbeanstalk describe-environments \
+            --application-name complex \
+            --environment-names complex-env \
+            --query 'Environments[0].HealthStatus' \
+            --output text)
+
+          VERSION=$(aws elasticbeanstalk describe-environments \
+            --application-name complex \
+            --environment-names complex-env \
+            --query 'Environments[0].VersionLabel' \
+            --output text)
+
+          echo "Version: $VERSION"
+          echo "Health: $HEALTH"
+          echo "HealthStatus: $HEALTH_STATUS"
+
+          if [ "$HEALTH" != "Green" ] || [ "$HEALTH_STATUS" != "Ok" ]; then
+            echo "Elastic Beanstalk environment is not healthy."
+            exit 1
+          fi
+
+          echo "Elastic Beanstalk environment is healthy."
       #Test check if the application is running4
