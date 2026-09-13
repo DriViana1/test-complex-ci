@@ -144,4 +144,4 @@ jobs:
             --environment-names complex-env \
             --query 'Environments[0].[Status,Health,HealthStatus,VersionLabel]' \
             --output table
-      #Test check if the application is running2
+      #Test check if the application is running3
