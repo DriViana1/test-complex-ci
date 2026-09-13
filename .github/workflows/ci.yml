@@ -72,7 +72,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BEANSTALK_BUCKET: complex-beanstalk-1943c38ed6c6032fb48a02b4c4
       IMAGE_TAG: ${{ needs.ci.outputs.image_tag }}
 
     permissions:
@@ -82,6 +81,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform init
+        working-directory: terraform
+        run: terraform init
 
       - name: Update Dockerrun image tags
         run: |
