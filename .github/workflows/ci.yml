@@ -1,3 +1,6 @@
+# Antes de executar este workflow, crie um bucket S3 e atualize
+# o nome do bucket no arquivo terraform/main.tf
+
 name: CI/CD
 
 on:
@@ -87,7 +90,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::330905068651:role/git-role-aws
           aws-region: us-east-1
-          
+      
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
