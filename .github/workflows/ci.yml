@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -7,31 +7,21 @@ on:
       - feature/github-actions-ci
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
 
-    env:
-      BEANSTALK_BUCKET: complex-beanstalk-1943c38ed6c6032fb48a02b4c4
-
-    permissions:
-      id-token: write
-      contents: read
+    outputs:
+      image_tag: ${{ steps.image_tag.outputs.image_tag }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::330905068651:role/git-role-aws
-          aws-region: us-east-1
-
-      - name: Check AWS identity
-        run: aws sts get-caller-identity
-      
-      - name: Set image tag 
-        run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+              
+      - name: Set image tag
+        id: image_tag
+        run: |
+          echo "image_tag=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+          echo "IMAGE_TAG=${GITHUB_SHA::7}" >> "$GITHUB_ENV"
 
       - name: Update Dockerrun image tags
         run: |
@@ -76,6 +66,36 @@ jobs:
       - name: Push worker
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/multi-worker:${IMAGE_TAG}
 
+
+  cd:
+    needs: ci
+    runs-on: ubuntu-latest
+
+    env:
+      BEANSTALK_BUCKET: complex-beanstalk-1943c38ed6c6032fb48a02b4c4
+      IMAGE_TAG: ${{ needs.ci.outputs.image_tag }}
+
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update Dockerrun image tags
+        run: |
+          sed -i "s/:v2/:${IMAGE_TAG}/g" Dockerrun.aws.json
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::330905068651:role/git-role-aws
+          aws-region: us-east-1
+
+      - name: Check AWS identity
+        run: aws sts get-caller-identity
+        
       - name: Upload Dockerrun to S3
         run: |
           aws s3 cp Dockerrun.aws.json \
@@ -103,4 +123,3 @@ jobs:
 
           aws elasticbeanstalk wait environment-updated \
             --environment-name complex-env
-#testepermission2 
